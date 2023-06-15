@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>home page</h1>
+    <hr>
+    <a href="./login.html">Loginpage</a><hr>
+    <a href="./SignUp.html">SignUppage</a>
+
+    <hr>
+    <button onclick="del()">delete account</button>
+
+    <script>
+        function del(){
+            let pwd=prompt("enter password to delete account");
+
+            var userdetails = localStorage.getItem("userdetails");
+            userdetails = JSON.parse(userdetails);
+
+
+            if(password==userdetails.password)
+            {
+                localStorage.removeItem("userdetails");
+                alert("account deleted");
+                window.location.assign("file:///C:/Users/User/Desktop/javascript/DOM/HTML/SignUp.html");
+            }
+            else{
+                alert("wrong password,cannot delete the account");
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

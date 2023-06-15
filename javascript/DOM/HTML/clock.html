@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width:100vw;
+            height:100vh;
+        }
+        img{
+            width:500px;
+            height:500px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+        #minutehand{
+            background:linear-gradient(black 0%,black 50%,transparent 50%);
+            width:3px;
+            height:280px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+        #hourshand{
+            background:linear-gradient(blue 0%,blue 50%,transparent 55%);
+            width:3px;
+            height:250px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+        #secondshand{
+            background:linear-gradient(red 0%,red 50%,transparent 55%);
+            width:3px;
+            height:300px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+        #midpoint{
+            background:black;
+            width:10px;
+            height:10px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+    </style>
+</head>
+<body>
+    <img src="./clock.png" alt="clock">
+    <div id="minutehand"></div>
+    <div id="secondshand"></div>
+    <div id="hourshand"></div>
+    <div id="midpoint"></div>
+    <script>
+        function displayTime()
+        {
+            let secondhand = document.getElementById("secondshand");
+            let minutehand = document.getElementById("minutehand");
+            let hourshand=document.getElementById("hourshand");
+
+
+            let d= new Date();
+            let seconds= d.getSeconds();
+            let minute=d.getMinutes();
+            let hour=d.getHours();
+
+
+            secondhand.style.transform = `translate(-50%,-50%) rotate(${seconds*6}deg)`
+            minutehand.style.transform = `translate(-50%,-50%) rotate(${minute*6}deg)`
+            hourshand.style.transform = `translate(-50%,-50%) rotate(${(hour*30)+(minute*0.5)}deg)`
+        
+        
+        }
+
+        setInterval(()=>{displayTime()},1000)
+    </script>
+
+    
+</body>
+</html>

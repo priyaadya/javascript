@@ -1,0 +1,59 @@
+JS SYLLABUS
+
+SECTION 1- FUNDAMENTALS OF JS
+
+            keywords
+            Values and variables
+            identifiers rules
+            datatypes
+            operators
+            flow control statements
+                    =>Decision making statements
+                            if,if else,if elseif else,switch
+                    =>looping
+                            for,while,do while, for in,for of
+                    =>Functions in js
+
+
+SECTION 2 - ECMA and ADVANCE JS
+            ECMA(european computer manifacture association)
+
+    ES-6
+    let , const keyword
+    template literal
+    arrow Function
+    destructuring
+    rest and spread operator
+    default and rest parameter
+
+
+    ADVANCE JS
+        Types of Functions
+        Arrays :
+            =>intro->problems->inbuilt method
+        Strings
+            intro -> problems -> inbuilt method
+        Deep  copy and Shallow copy
+        Copy by value and copy by address
+        Conversion and Coersion 
+        Objects
+        CRUD on Objects
+        classes in js
+        inheritance
+        encapsulation
+        Date object and inbuilt methods
+        Math objects and inbuilt methods
+        -------------------------------------------------------------------------------
+
+
+        HOW JS ENGINE WORKS:=
+                Hoisting
+                execution context
+                clousers
+                scope chain
+                lexical environment
+
+
+        
+        
+

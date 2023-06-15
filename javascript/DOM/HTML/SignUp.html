@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #formbox{
+            background-color: rgb(232, 232, 0);
+            width: 350px;
+            height: auto;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        #formbox input{
+            display: block;
+            width: 90%;
+            height: 25px;
+            margin: 4px auto;
+            border-radius: 4px;
+            border:  solid 1px gray;
+        }
+        #formbox input[type="radio"]
+        {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            accent-color:rgb(232, 232, 0) ;
+        }
+
+        button{
+            padding: 6px 20px;
+            font-size: 17px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Create new account</h1>
+        <hr>
+
+        <div id="formbox">
+            <input type="text" placeholder="username" id="uname">
+            <input type="email" placeholder="email" id="email">
+            <input type="password" placeholder="password" id="pwd">
+            <input type="number" placeholder="age" id="age">
+            <input type="date" placeholder="date of birth" id="dob">
+
+            <fieldset>
+                <legend>gender</legend>
+
+                <input type="radio" name="gender" id="m" value="Male"><label for="m">Male</label><br>
+                <input type="radio" name="gender" id="f" value="female"><label for="f">Female</label><br>
+
+            </fieldset>
+            <button onclick="createUser()">Signup</button>
+        </div>
+        already have an account ? <a href="./login.html">Login in</a>
+        
+    </div>
+
+    <script>
+        function createUser()
+        {
+            var uname = document.getElementById("uname").value;
+            var email = document.getElementById("email").value;
+            var pwd = document.getElementById("pwd").value;
+            var age = document.getElementById("age").value
+            var dob  = document.getElementById("dob").value;
+            var gender;
+
+            var options = document.getElementsByName("gender");
+            for (let i = 0; i < options.length; i++) 
+            {
+                if(options[i].checked)
+                {
+                    gender = options[i].value
+                }
+            }
+
+            let userdetails  = {
+                username : uname,
+                email : email,
+                password : pwd ,
+                age : age ,
+                birth_date : dob ,
+                gender : gender
+            }
+
+            localStorage.setItem("userdetails" , JSON.stringify(userdetails));
+            alert("Signup succcesfull");
+
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+    
+</body>
+</html>
